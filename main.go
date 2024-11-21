@@ -2,9 +2,7 @@ package main
 
 import (
 	"embed"
-	"fmt"
 	"log"
-	"os"
 
 	"github.com/joho/godotenv"
 	"github.com/wailsapp/wails/v2"
@@ -30,11 +28,7 @@ func main() {
 	godotenv.Load()
 
 	//configurations
-	cfg := config.LoadConfig()
-	fmt.Println(cfg.SomeConfig)
-
-	//access ENV
-	fmt.Println(os.Getenv("PORT"))
+	config.LoadConfig()
 
 	// Create application with options
 	err := wails.Run(&options.App{
@@ -53,10 +47,10 @@ func main() {
 		Menu:             nil,
 		Logger:           nil,
 		LogLevel:         logger.DEBUG,
-		OnStartup:        app.startup,
-		OnDomReady:       app.domReady,
-		OnBeforeClose:    app.beforeClose,
-		OnShutdown:       app.shutdown,
+		OnStartup:        app.Startup,
+		OnDomReady:       app.DomReady,
+		OnBeforeClose:    app.BeforeClose,
+		OnShutdown:       app.Shutdown,
 		WindowStartState: options.Normal,
 		Bind: []interface{}{
 			app,

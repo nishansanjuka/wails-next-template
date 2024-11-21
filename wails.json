@@ -10,5 +10,6 @@
   "author": {
     "name": "Nipuna NIshan",
     "email": "nipunanishan47@gmail.com"
-  }
+  },
+  "test" : "ginkgo -r ../..."
 }
