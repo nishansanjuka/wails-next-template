@@ -12,7 +12,7 @@ import (
 	"github.com/wailsapp/wails/v2/pkg/options/mac"
 	"github.com/wailsapp/wails/v2/pkg/options/windows"
 
-	"wails-next-template/config"
+	"{{.ProjectName}}/config"
 )
 
 //go:embed all:frontend/dist
@@ -32,7 +32,7 @@ func main() {
 
 	// Create application with options
 	err := wails.Run(&options.App{
-		Title:             "wails-next-template",
+		Title:             "{{.ProjectName}}",
 		Width:             1024,
 		Height:            768,
 		DisableResize:     false,
@@ -78,7 +78,7 @@ func main() {
 			WebviewIsTransparent: true,
 			WindowIsTranslucent:  true,
 			About: &mac.AboutInfo{
-				Title:   "wails-next-template",
+				Title:   "{{.ProjectName}}",
 				Message: "",
 				Icon:    icon,
 			},

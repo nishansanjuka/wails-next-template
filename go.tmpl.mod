@@ -1,4 +1,4 @@
-module wails-next-template
+module changeme
 
 go 1.22.0
 
@@ -6,7 +6,7 @@ toolchain go1.23.3
 
 require (
 	github.com/joho/godotenv v1.5.1
-	github.com/wailsapp/wails/v2 v2.9.2
+	github.com/wailsapp/wails/v2 {{.WailsVersion}}
 )
 
 require (
